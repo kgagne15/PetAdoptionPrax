@@ -8,6 +8,8 @@ from app import app
 db.drop_all()
 db.create_all()
 
+#Create example animal for all three species
+
 dog = Pet(name="Rocky", species="dog", photo_url="https://static.inspiremore.com/wp-content/uploads/2020/11/16113321/Grumpy-Dog-Challenge-24.jpg",
 age=2, notes="Rocky has the best smile", available=True)
 cat = Pet(name="Kiki", species="cat", photo_url="https://preview.redd.it/7cu5lub5okl21.jpg?auto=webp&s=5ad2cf86d114e14c63cbd7bfc57124f17abbc880",
@@ -15,5 +17,6 @@ age=5, notes="Kiki is a menace", available=True)
 porcupine = Pet(name="Spikey", species="porcupine", photo_url="http://cincinnatizoo.org/system/assets/uploads/2013/03/porcupine.jpg",
 age=3, notes="Spikey likes hugs", available=True)
 
+#Add/Commit example animals to database
 db.session.add_all([dog, cat, porcupine])
 db.session.commit()

@@ -4,6 +4,7 @@ db = SQLAlchemy()
 
 
 def connect_db(app):
+    """Function to connect database to app.py"""
     db.app = app
     db.init_app(app)
 

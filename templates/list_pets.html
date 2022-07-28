@@ -12,7 +12,7 @@
                     <img src="{{pet.photo_url}}" class="card-img-top" alt="...">
                     {% endif %}
                     <div class="card-body">
-                        <h5 class="card-title">{{pet.name}}</h5>
+                        <h5 class="card-title"><a href="/{{pet.id}}">{{pet.name}}</a></h5>
                         <p class="card-text">{{pet.note}}</p>
                         {% if pet.available == True %}
                         <p class="card-text"><b>This pet is AVAILABLE</b></p>
