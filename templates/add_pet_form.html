@@ -5,9 +5,16 @@
     
     <div class="container">
         <h1 class="display-1 text-center">Add a New Pet</h1>
+        <div class="container">
+            <div class="row justify-content-center">
+                {% for msg in get_flashed_messages() %}
+                    <div>{{ msg }}</div>
+                {% endfor %}
+            </div>
+        </div>
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <form action="">
+                <form action="/add" method="POST">
                     {{ form.hidden_tag() }}
                     {% for field in form if field.widget.input_type != 'hidden' %}
                     <div class="form-group">
@@ -20,9 +27,16 @@
                         {% endfor %}
                     </div>
                     {% endfor %}
-                    <button class="btn btn-success btn-lg">Submit</button>
+                    <button class="btn btn-info btn-lg">Submit</button>
                 </form>
             </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <form action="/">
+                <button class="btn btn-warning">Go Home</button>
+            </form>
         </div>
     </div>
 {% endblock %}
